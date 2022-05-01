@@ -4,18 +4,27 @@ using Xunit;
 
 namespace MindBoxUnitTests
 {
+    /// <summary>
+    /// Класс тестов для фигур
+    /// </summary>
     public class ShapesTest
     {
+        /// <summary>
+        /// Проверка расчета площади круга по радиусу
+        /// </summary>
         [Fact]
         public void TestCircleArea()
         {
             double radius = 20;
-            IShape circle = new Circle(radius);            
+            IShape circle = new Circle(radius);
             double circleArea = circle.GetArea();
 
             Assert.Equal(circleArea, Math.PI * Math.Pow(radius, 2));
         }
 
+        /// <summary>
+        /// Проверка расчета площади треугольника по трем сторонам
+        /// </summary>
         [Fact]
         public void TestTriangleArea()
         {
@@ -27,7 +36,7 @@ namespace MindBoxUnitTests
             double triangleArea = triangle.GetArea();
 
             double halfPerimeter = (firstSide + secondSide + thirdSide) / 2;
-            double testTriangleArea =  Math.Sqrt(halfPerimeter
+            double testTriangleArea = Math.Sqrt(halfPerimeter
                 * (halfPerimeter - firstSide)
                 * (halfPerimeter - secondSide)
                 * (halfPerimeter - thirdSide));
