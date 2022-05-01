@@ -1,0 +1,8 @@
+SELECT Goods.Name as GoodName, Categories.Name as CatName
+FROM GoodsToCategories
+RIGHT JOIN Goods ON Goods.Id = GoodsToCategories.GoodId
+LEFT JOIN Categories ON Categories.ID = GoodsToCategories.CategoryId;
+
+--Где Goods - таблица с товарами, 
+--Categories - таблица с категориями,
+--GoodsToCategories - таблица соответствия товаров к категориям
